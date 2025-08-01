@@ -15,10 +15,8 @@
     html,
     body {
         height: 100%;
-        /* Add this */
         margin: 0;
         padding-top: 20px;
-        /* Remove padding-top/padding-bottom from here */
         font-family: sans-serif;
         background-color: black;
         color: white;
@@ -85,17 +83,6 @@
         padding: 50px 0;
         max-width: 1000px;
     }
-    /* .timeline::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0;
-        border-radius: 50%;
-        transform: translateX(-50%);
-        height: 80%;
-        width: 4px;
-        background-color: white;
-    }*/
     
     .timeline::before {
         content: '';
@@ -171,9 +158,7 @@
         }
         .timeline::before {
             left: 20px;
-            /* Position the vertical line near the left */
             top: 60px;
-            /* Lower it to avoid top line before SSC */
             height: 100%;
         }
         .timeline-item {
@@ -183,7 +168,6 @@
         }
         .timeline-item::before {
             left: 20px;
-            /* Position the circle with the line */
             top: 0;
             transform: none;
         }
@@ -191,7 +175,6 @@
         .timeline-right {
             width: 100%;
             padding-left: 40px;
-            /* Indent to the right of the circle and line */
             padding-right: 0;
             text-align: left;
         }
@@ -242,9 +225,7 @@
     main {
         flex: 1;
         padding-top: 60px;
-        /* Compensate for fixed navbar */
-        padding-bottom: 20px;
-        /* Add space before footer */
+        padding-bottom: 60px;
     }
     
     footer {
