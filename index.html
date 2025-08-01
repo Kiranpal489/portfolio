@@ -87,14 +87,14 @@
         }
         
         #container-2 {
-            padding: 20px;
+            padding: 50px;
         }
         
         .Portfolio {
             position: relative;
             width: 260px;
             height: 320px;
-            margin-left: 60px;
+            margin-left: 100px;
             margin-top: 50px;
             object-fit: cover;
             border: solid 3px #00b7eb;
@@ -117,14 +117,11 @@
             font-size: 40px;
             font-weight: 600;
             color: #00b7eb;
-            text-align: start;
             display: block;
+            text-align: left;
+            /* 👈 Ensures left alignment */
             word-break: break-word;
-        }
-        
-        .type-line {
-            display: inline;
-            white-space: nowrap;
+            white-space: normal;
         }
         
         .cursor {
@@ -134,7 +131,9 @@
             background-color: #00b7eb;
             animation: blink 0.7s steps(1) infinite;
             margin-left: 2px;
-            vertical-align: text-bottom;
+            vertical-align: baseline;
+            /* 👈 Aligns with text line properly */
+            line-height: 1;
         }
         
         @keyframes blink {
@@ -144,16 +143,6 @@
             }
             50% {
                 opacity: 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .typing-container {
-                font-size: 22px;
-                text-align: center;
-            }
-            .type-line {
-                white-space: normal;
             }
         }
         
