@@ -14,8 +14,10 @@
     html,
     body {
         height: 100%;
+        /* Add this */
         margin: 0;
         padding-top: 20px;
+        /* Remove padding-top/padding-bottom from here */
         font-family: sans-serif;
         background-color: black;
         color: white;
@@ -95,6 +97,10 @@
         width: 200px;
         height: 300px;
     }
+    /*.button {
+        padding-top: 40px;
+        left: 20px;
+    }*/
     
     .display-6 {
         font-size: 40px;
@@ -112,6 +118,7 @@
     .image-card:hover {
         transform: scale(1.06);
         background-color: rgba(255, 255, 255, 0.12);
+        /* More visible */
         backdrop-filter: blur(6px);
         box-shadow: 0 8px 25px rgba(0, 183, 235, 0.5);
         transition: all 0.3s ease;
@@ -176,14 +183,19 @@
     
     .image-card.clicked {
         background: rgba(255, 255, 255, 0.1);
+        /* Semi-transparent overlay */
         backdrop-filter: blur(8px);
+        /* Stronger blur */
         border-color: #00b7eb;
+        /* Highlight border */
     }
     
     .image-card.clicked .image-info {
         opacity: 1;
         background: rgba(0, 0, 0, 0.6);
+        /* Darker overlay for text readability */
         backdrop-filter: blur(2px);
+        /* Subtle blur for text area */
     }
     
     .image-card.clicked .image-info p {
@@ -220,7 +232,9 @@
     main {
         flex: 1;
         padding-top: 60px;
-        padding-bottom: 20px;
+        /* Compensate for fixed navbar */
+        padding-bottom: 300px;
+        /* Add space before footer */
     }
     
     footer {
