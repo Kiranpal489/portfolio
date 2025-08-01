@@ -13,13 +13,26 @@
 <style>
     html,
     body {
+        height: 100%;
         margin: 0;
-        padding: 0;
-        padding-top: 60px;
+        padding-top: 20px;
         font-family: sans-serif;
         background-color: black;
         color: white;
-        align-items: center;
+        overflow-x: hidden;
+    }
+    
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .container {
+        max-width: 1140px;
     }
     
     .card {
@@ -60,7 +73,7 @@
         font-size: 30px;
         font-weight: bold;
         top: 20px;
-        margin-left: 70px;
+        margin-left: 20px;
         color: #00b7eb;
         text-decoration: none;
     }
@@ -82,10 +95,6 @@
         width: 200px;
         height: 300px;
     }
-    /*.button {
-        padding-top: 40px;
-        left: 20px;
-    }*/
     
     .display-6 {
         font-size: 40px;
@@ -100,25 +109,11 @@
         gap: 30px;
     }
     
-    .image-card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        border: 1px solid white;
-        height: 300px;
-        top: 60px;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    
     .image-card:hover {
         transform: scale(1.06);
         background-color: rgba(255, 255, 255, 0.12);
-        /* More visible */
         backdrop-filter: blur(6px);
-        box-shadow: 0 8px 20px rgba(0, 183, 235, 0.5);
+        box-shadow: 0 8px 25px rgba(0, 183, 235, 0.5);
         transition: all 0.3s ease;
     }
     
@@ -149,7 +144,7 @@
         padding: 20px;
         transition: opacity 0.3s ease, background 0.4s ease;
         text-align: center;
-        pointer-events: none;
+        pointer-events: auto;
     }
     
     .image-card:hover .image-info {
@@ -166,21 +161,29 @@
         font-size: 14px;
     }
     
+    .image-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        border: 1px solid white;
+        height: 300px;
+        top: 60px;
+        justify-content: center;
+        background: transparent;
+    }
+    
     .image-card.clicked {
-        background-color: rgba(255, 255, 255, 0.1);
-        /* translucent white */
-        backdrop-filter: blur(7px);
-        /* glass blur effect */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
         border-color: #00b7eb;
-        transition: all 0.3s ease;
     }
     
     .image-card.clicked .image-info {
-        background: rgba(0, 0, 0, 0.4);
-        /* dark overlay behind text */
-        backdrop-filter: blur(3px);
-        opacity: 1 !important;
-        color: #fff;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
     }
     
     .image-card.clicked .image-info p {
@@ -213,11 +216,27 @@
         opacity: 0;
         transition: opacity 0.5s ease;
     }
+    
+    main {
+        flex: 1;
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+    
+    footer {
+        flex-shrink: 0;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
 </style>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-md color fixed-top" data-aos="fade-out">
-        <div class="container-fluid" style="max-width: 12000;">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">Kiran Pal</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon">
@@ -233,46 +252,51 @@
             </div>
         </div>
     </nav>
-    <section class="container" data-aos="fade-up" data-aos-delay="400">
-        <div class="row">
-            <div class="display-6" style="color: #00b7eb" ;>Projects</div>
-        </div>
-        <div class="portfolio">
-            <div class="image-card">
-                <img src="assets/protfolio1.jpg" class="Project">
-                <div class="image-info">
-                    <h3>Portfolio</h3>
-                    <p>A clean, responsive portfolio showcasing my web development skills and projects. Simple, focused design with easy navigation and smooth user experience. Built with precision and purpose.</p>
-                    <div class="d-flex flex-row justify-content-between gap-4">
-                        <button type="button" class="btn btn-primary rounded-4">View Porject</button>
-                        <button type="button" class="btn btn-primary rounded-4">Github</button>
+    <main class="flex-fill">
+        <section class="container" data-aos="fade-up" data-aos-delay="400">
+            <div class="row g-10">
+                <div class="display-6" style="color: #00b7eb" ;>Projects</div>
+            </div>
+            <div class="portfolio">
+                <div class="image-card">
+                    <img src="assets/protfolio1.jpg" class="Project">
+                    <div class="image-info">
+                        <h3>Portfolio</h3>
+                        <p>A clean, responsive portfolio showcasing my web development skills and projects. Simple, focused design with easy navigation and smooth user experience. Built with precision and purpose.</p>
+                        <div class="d-flex flex-row justify-content-between gap-4">
+                            <button type="button" class="btn btn-primary rounded-4">View Porject</button>
+                            <button type="button" class="btn btn-primary rounded-4">Github</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/personal-expense.jpg" class="Project">
+                    <div class="image-info">
+                        <h3>Personal Expense Tracker</h3>
+                        <p>A clean and responsive web app to manage daily expenses. Users can add, edit, and categorize spending, with visual charts for easy tracking. Built with HTML, CSS, and JavaScript for efficient budgeting.</p>
+                        <div class="d-flex flex-row justify-content-between gap-4">
+                            <a href="https://kiranpal489.github.io/personal-expense-tracker"><button class="btn btn-primary rounded-4">View Project</button></a>
+                            <a href="https://github.com/Kiranpal489/personal-expense-tracker"><button class="btn btn-primary rounded-4">Github</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-card">
+                    <img src="assets/to-do-list.jpg" class="Project">
+                    <div class="image-info">
+                        <h3>To Do List</h3>
+                        <p>A clean and efficient to-do list web application designed for seamless task management. Users can easily add, edit, prioritize, and delete tasks in a simple interface. it offers a smooth and responsive user experience.</p>
+                        <div class="d-flex flex-row justify-content-between gap-4">
+                            <a href="https://kiranpal489.github.io/todolist/"><button type="button" class="btn btn-primary rounded-4">View Porject</button></a>
+                            <a href="https://github.com/Kiranpal489/todolist"><button type="button" class="btn btn-primary rounded-4">Github</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="image-card">
-                <img src="assets/personal-expense.jpg" class="Project">
-                <div class="image-info">
-                    <h3>Personal Expense Tracker</h3>
-                    <p>A clean and responsive web app to manage daily expenses. Users can add, edit, and categorize spending, with visual charts for easy tracking. Built with HTML, CSS, and JavaScript for efficient budgeting.</p>
-                    <div class="d-flex flex-row justify-content-between gap-4">
-                        <a href="https://kiranpal489.github.io/personal-expense-tracker"><button type="button" class="btn btn-primary rounded-4">View Porject</button></a>
-                        <a href="https://github.com/Kiranpal489/personal-expense-tracker"><button type="button" class="btn btn-primary rounded-4">Github</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-card">
-                <img src="assets/to-do-list.jpg" class="Project">
-                <div class="image-info">
-                    <h3>To Do List</h3>
-                    <p>A clean and efficient to-do list web application designed for seamless task management. Users can easily add, edit, prioritize, and delete tasks in a simple interface. it offers a smooth and responsive user experience.</p>
-                    <div class="d-flex flex-row justify-content-between gap-4">
-                        <a href="https://kiranpal489.github.io/todolist/"><button type="button" class="btn btn-primary rounded-4">View Porject</button></a>
-                        <a href="https://github.com/Kiranpal489/todolist"><button type="button" class="btn btn-primary rounded-4">Github</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
+    <footer class="text-white text-center mt-auto">
+        &copy; 2025 Kiran. All rights reserved.
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
@@ -283,26 +307,40 @@
             easing: 'ease-in-out',
             once: true,
         });
-        document.querySelectorAll('a.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // prevent default jump
-                const href = this.getAttribute('href');
-                document.body.classList.add('fade-out');
 
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500); // match the CSS transition
+        document.querySelectorAll('.image-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // If clicked element is a button, link, or inside image-info, ignore
+                if (e.target.closest('button') || e.target.closest('a') || e.target.closest('.image-info')) {
+                    return; // Let buttons/links handle their own clicks
+                }
+                if (this.classList.contains('clicked')) {
+                    this.classList.remove('clicked');
+                } else {
+                    //rest of the program
+                }
+                // Toggle 'clicked' state only if clicking outside buttons/links
+                document.querySelectorAll('.image-card').forEach(c => {
+                    c.classList.remove('clicked'); // Remove from all cards
+                });
+                this.classList.add('clicked'); // Add to clicked card
             });
         });
         document.querySelectorAll('.image-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Remove 'clicked' from all other cards (optional)
+            card.addEventListener('click', function(e) {
+                // Ignore clicks on buttons/links
+                if (e.target.closest('button') || e.target.closest('a')) return;
+
+                // Toggle 'clicked' state
+                const wasClicked = this.classList.contains('clicked');
+
+                // Close all cards first
                 document.querySelectorAll('.image-card').forEach(c => {
-                    if (c !== this) c.classList.remove('clicked');
+                    c.classList.remove('clicked');
                 });
 
-                // Toggle clicked state on this card
-                this.classList.toggle('clicked');
+                // Re-open if this wasn't already clicked
+                if (!wasClicked) this.classList.add('clicked');
             });
         });
     </script>
