@@ -14,8 +14,10 @@
         .html,
         body {
             height: 100%;
+            /* Add this */
             margin: 0;
             padding-top: 30px;
+            /* Remove padding-top/padding-bottom from here */
             font-family: sans-serif;
             background-color: black;
             color: white;
@@ -110,26 +112,46 @@
             transform: scale(1.30);
         }
         
-        .card {
-            margin-top: 70px;
-            margin-left: 70px;
-            background-color: #1b1b1b;
-        }
-        
         .submit {
             margin-top: 10px;
-            width: 610px;
+        }
+        
+        .card {
+            margin-top: 70px;
+            margin-left: 5px;
+            background-color: #1b1b1b;
+            width: 100%;
+            max-width: 460px;
+            /* width:620px; height:480px; REMOVE */
         }
         
         .form-control {
-            border: none;
+            /* border: none; background-color: #343434; KEEP */
+            width: 560px;
             background-color: #343434;
+            /* REMOVE */
         }
         
         .form-control:focus {
             color: white;
             background-color: #343434;
             border: 2px solid white;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .btn-primary {
+            width: 100% !important;
+            /* Changed from fixed width */
+            max-width: 400px;
+            /* Maximum width on larger screens */
+        }
+        
+        @media (min-width: 992px) {
+            .card {
+                width: 460px;
+                height: 450px;
+            }
         }
         
         .color {
@@ -144,7 +166,9 @@
         main {
             flex: 1;
             padding-top: 50px;
-            padding-bottom: 80px;
+            /* Compensate for fixed navbar */
+            padding-bottom: 250px;
+            /* Add space before footer */
         }
         
         .container {
@@ -192,27 +216,26 @@
                             <a href="mailto:kiran.070226@gmail.com" target="_blank" style="text-decoration:none;"><i class="bi bi-envelope-fill mail"></i></a>
                         </div>
                     </div>
-                    <div class="card rounded-4" style="width:620px;height:480px;">
+                    <div class="card rounded-4" style="width:460px;height:450px;">
                         <div class="card-body">
                             <form id="contact-form" action="https://formsubmit.co/kiran.070226@gmail.com" method="POST">
                                 <div class="mb-3">
                                     <label name="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" placeholder="Your Name" style="width:560px">
+                                    <input type="text" class="form-control" placeholder="Your Name" style="width:400px">
                                 </div>
                                 <div class="mb-3">
                                     <label name="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control" placeholder="Your Mail" style="width:560px;">
+                                    <input type="text" class="form-control" placeholder="Your Mail" style="width:400px;">
                                 </div>
                                 <div class="mb-3">
                                     <label name="message" class="form-label">Message</label>
-                                    <textarea name="message" class="form-control" placeholder="Your message" style="height:150px;width:560px;"></textarea>
+                                    <textarea name="message" class="form-control" placeholder="Your message" style="height:150px;width:400px;"></textarea>
                                 </div>
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
                                 <input type="hidden" name="_subject" value="New Contact from Portfolio">
-
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary px-5" style="width:560px">Send Message</button>
+                                    <button type="submit" class="btn btn-primary px-5" style="width:400px">Send Message</button>
                                     <p id="success-msg" style="display:none; color:#00b7eb;margin-top:10px;">Message sent successfully!</p>
                                 </div>
                             </form>
