@@ -42,7 +42,7 @@
         color: white;
         max-width: 90%;
         margin-top: 70px;
-        font-size: 1.05rem;
+        font-size: 1rem;
         line-height: 1.8;
         text-align: justify;
         text-justify: inter-word;
@@ -52,7 +52,7 @@
         display: inline;
         border-radius: 50%;
         border: solid 3px #00b7eb;
-        margin-left: 70px;
+        margin-left: 40px;
         margin-top: 60px;
         padding-top: 0;
         transition: transform 0.3s ease-in-out;
@@ -165,23 +165,37 @@
     
     @media (max-width: 768px) {
         .timeline {
-            padding-left: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .timeline::before {
+            left: 20px;
+            /* Position the vertical line near the left */
+            top: 60px;
+            /* Lower it to avoid top line before SSC */
+            height: 100%;
         }
         .timeline-item {
             flex-direction: column;
+            align-items: flex-start;
+            margin: 40px 0;
+        }
+        .timeline-item::before {
+            left: 20px;
+            /* Position the circle with the line */
+            top: 0;
+            transform: none;
         }
         .timeline-left,
         .timeline-right {
             width: 100%;
+            padding-left: 40px;
+            /* Indent to the right of the circle and line */
+            padding-right: 0;
             text-align: left;
-            padding: 0;
         }
-        .timeline::before {
-            left: 15px;
-        }
-        .timeline-item::before {
-            left: 15px;
-            transform: none;
+        .timeline-left {
+            padding-bottom: 10px;
         }
     }
     
@@ -298,26 +312,30 @@
                         <div class="timeline-content">Completed Secondary Education with 93% Marks.</div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-left">
-                        <div class="timeline-title"><strong>🎓Diploma Completed(Computer Science Engineering)</strong></div>
-                        <div class="timeline-date">2021-2024</div>
+                        <div class="timeline-title"><strong>🎓Diploma Completed (CSE)</strong></div>
+                        <div class="timeline-date">2021–2024</div>
                     </div>
                     <div class="timeline-right">
-                        <div class="timeline-subtitle">Loknete Gopinathji Munde Institute of Engineering Education and Research, Nashik</div>
-                        <div class="timeline-content">Successfully completed Diploma in Computer Science Engineering with hands-on experience in desktop application development using C#.NET.</div>
+                        <div class="timeline-subtitle">Loknete Gopinathji Munde Institute, Nashik</div>
+                        <div class="timeline-content">Completed diploma with hands-on experience in C#.NET applications.</div>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-left">
-                        <div class="timeline-title"><strong>🎯Bacholer of Engineering(Pursuing)</strong></div>
-                        <div class="timeline-date">2024-2025</div>
+                        <div class="timeline-title"><strong>🎯Bachelor of Engineering (Pursuing)</strong></div>
+                        <div class="timeline-date">2024–2027</div>
                     </div>
                     <div class="timeline-right">
-                        <div class="timeline-subtitle">Gokhale Education Society R.H Sapat College of Engineering, Nashik</div>
-                        <div class="timeline-content">Currently pursuing a Third Year of Engineering in Computer Science, focused on full stack Web development and modern web technologies.</div>
+                        <div class="timeline-subtitle">G.E.S R.H. Sapat College, Nashik</div>
+                        <div class="timeline-content">Focused on full stack development and modern web technologies.</div>
                     </div>
                 </div>
+            </div>
+
         </section>
     </main>
     <footer class="text-white text-center mt-auto">
