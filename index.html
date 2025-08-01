@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             padding-top: 60px;
+            padding-bottom: 100px;
             font-family: sans-serif;
             background-color: black;
             color: white;
@@ -23,7 +24,7 @@
             font-size: 30px;
             font-weight: bold;
             top: 20px;
-            margin-left: 70px;
+            margin-left: 20px;
             color: #00b7eb;
             text-decoration: none;
         }
@@ -32,10 +33,18 @@
             color: #00b7eb;
         }
         
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
         .container {
-            margin-top: 30px;
-            align-items: center;
-            /*padding: 15px;*/
+            max-width: 1140px;
+        }
+        
+        .custom-max-width {
+            max-width: 1140px;
+            /* or 1200px if you prefer slightly wider */
+            margin: 0 auto;
         }
         
         .badge {
@@ -78,15 +87,15 @@
         }
         
         #container-2 {
-            margin-left: 50px;
+            padding: 20px;
         }
         
         .Portfolio {
-            width: 330px;
-            height: 420px;
-            margin-left: 120px;
-            margin-top: 20px;
-            display: inline;
+            position: relative;
+            width: 260px;
+            height: 320px;
+            margin-left: 60px;
+            margin-top: 50px;
             object-fit: cover;
             border: solid 3px #00b7eb;
             border-radius: 50%;
@@ -105,19 +114,52 @@
         }
         
         .typing-container {
-            display: inline-flex;
-            align-items: baseline;
             font-size: 40px;
             font-weight: 600;
             color: #00b7eb;
+            text-align: start;
+            display: block;
+            word-break: break-word;
+        }
+        
+        .type-line {
+            display: inline;
+            white-space: nowrap;
         }
         
         .cursor {
-            height: 0.90em;
+            display: inline-block;
             width: 2px;
+            height: 1em;
             background-color: #00b7eb;
-            margin-left: 5px;
             animation: blink 0.7s steps(1) infinite;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+        }
+        
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .typing-container {
+                font-size: 22px;
+                text-align: center;
+            }
+            .type-line {
+                white-space: normal;
+            }
+        }
+        
+        html,
+        body {
+            overflow-x: hidden;
         }
         
         @keyframes blink {
@@ -164,8 +206,8 @@
         .contact {
             font-size: 2rem;
             margin-top: 70px;
-            margin-left: 10px;
-            gap: 20px;
+            margin-left: 8px;
+            gap: 30px;
         }
         
         a i {
@@ -183,10 +225,10 @@
 
 <body>
     <nav class="navbar navbar-expand-md color fixed-top" data-aos="fade-out">
-        <div class="container-fluid" style="max-width: 12000;">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">Kiran Pal</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
-            <span class="navbar-toggler-icon">
+            <span class="navbar-toggler-icon" style="color: white;">
         </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav text-center">
@@ -199,21 +241,25 @@
             </div>
         </div>
     </nav>
-    <section class="container" data-aos="zoom-in" data-aos-delay="400">
+    <section class="container custom-max-width" data-aos="zoom-in" data-aos-delay="400">
         <div class="row">
             <div class="col-md-5">
                 <div id="container-1 m-2">
                     <img src="assets/kiran.jpg" class="Portfolio">
                 </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-5">
                 <div id="container-2">
                     <div class="heading-1">Hello, I'am</div>
                     <div class="heading-2">Kiran Pal</div>
                     <div class="heading-3">Computer Engineering Student</div>
-                    <div class="typing-container"><span id="text-type"></span><span class="cursor"></span></div>
+                    <div class="typing-container">
+                        <span class="type-line">
+                        <span id="text-type"></span><span class="cursor"></span>
+                        </span>
+                        <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
+                    </div>
                     <br><br><br>
-                    <!--<button type="button" class="btn btn-primary" style="width:150px;height:50px;">View My Work</button>-->
                     <button type="button" class="btn Download" style="width:170px;height:55px;">
                     <i class="bi bi-file-earmark-text"></i> Download CV</button><br>
                     <div class="contact d-flex">
@@ -225,6 +271,35 @@
             </div>
         </div>
     </section>
+    <!--<section class="container custom-max-width" data-aos="zoom-in" data-aos-delay="400">
+        <div class="row align-items-center justify-content-center">
+            Left side: Image 
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <img src="assets/kiran.jpg" class="Portfolio img-fluid">
+            </div>
+
+             Right side: Text + Button + Icons 
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center text-md-start">
+                <div class="heading-1">Hello, I'am</div>
+                <div class="heading-2">Kiran Pal</div>
+                <div class="heading-3">Computer Engineering Student</div>
+                <div class="typing-container">
+                    <span id="text-type"></span><span class="cursor"></span>
+                    <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
+                </div>
+                <br><br>
+                <button type="button" class="btn Download mt-2" style="width:170px;height:55px;">
+                <i class="bi bi-file-earmark-text"></i> Download CV
+            </button><br><br><br>
+                <div class="contact d-flex justify-content-center justify-content-md-start mt-4 gap-4">
+                    <a href="https://www.linkedin.com/in/kiran-pal-792960337" target="_blank" style="text-decoration:none;"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/Kiranpal489" target="_blank" style="text-decoration:none;"><i class="bi bi-github"></i></a>
+                    <a href="mailto:kiran.070226@gmail.com" target="_blank" style="text-decoration:none;"><i class="bi bi-envelope-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
