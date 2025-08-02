@@ -258,7 +258,7 @@
                         <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
                     </div>
                     <br>
-                    <a href="assets/kiran_resume.pdf" class="btn Download d-flex align-items-center justify-content-center gap-2" style="width:170px;height:55px;" id="downloadCV">
+                    <a href="assets/kiran_resume.pdf" download="kiran_resume.pdf" class="btn Download d-flex align-items-center justify-content-center gap-2" style="width:170px;height:55px;" id="downloadCV">
                         <i class="bi bi-file-earmark-text resume-download fs-5"></i>
                         <span>Download CV</span>
                     </a>
@@ -310,18 +310,16 @@
         });
 
         document.getElementById("downloadCV").addEventListener("click", function(e) {
-    e.preventDefault();
-    const link = document.createElement("a");
-    link.href = "assets/kiran_resume.pdf";
-    link.download = "kiran_resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-});
-
+            e.preventDefault();
+            const link = document.createElement("a");
+            link.href = "assets/kiran_resume.pdf";
+            link.download = "kiran_resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 
 </body>
 
 </html>
-
