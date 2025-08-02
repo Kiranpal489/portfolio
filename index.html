@@ -309,19 +309,19 @@
             document.body.classList.add("loaded");
         });
 
-        const toggleBtn = document.getElementById("theme-toggle");
-        const themeIcon = document.getElementById("theme-icon");
         document.getElementById("downloadCV").addEventListener("click", function(e) {
-            e.preventDefault();
-            const link = document.createElement("a");
-            link.href = "assets/kiran_resume.pdf";
-            link.download = "kiran_resume.pdf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
+    e.preventDefault();
+    const link = document.createElement("a");
+    link.href = "assets/kiran_resume.pdf";
+    link.download = "kiran_resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
     </script>
 
 </body>
 
 </html>
+
