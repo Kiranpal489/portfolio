@@ -6,227 +6,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            padding-top: 60px;
-            padding-bottom: 100px;
-            font-family: sans-serif;
-            background-color: black;
-            color: white;
-            align-items: center;
-        }
-        
-        .navbar-brand {
-            font-size: 30px;
-            font-weight: bold;
-            top: 20px;
-            margin-left: 20px;
-            color: #00b7eb;
-            text-decoration: none;
-        }
-        
-        .navbar-brand:hover {
-            color: #00b7eb;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        
-        .container {
-            max-width: 1140px;
-        }
-        
-        .custom-max-width {
-            max-width: 1140px;
-            /* or 1200px if you prefer slightly wider */
-            margin: 0 auto;
-        }
-        
-        .badge {
-            margin-top: 50px;
-            width: 180px;
-        }
-        
-        .heading {
-            font-size: 40px;
-            color: white;
-        }
-        
-        .Download {
-            text-align: center;
-            position: absolute;
-            background-color: none;
-            color: #00b7eb;
-            border: 2px solid #00b7eb;
-            z-index: 9999;
-        }
-        
-        .resume-download {
-            color: #00b7eb;
-        }
-        
-        .resume-download:focus {
-            color: white;
-        }
-        
-        .Download:hover {
-            box-shadow: 0 2px 20px #00b7eb;
-            background-color: #00b7eb;
-        }
-        
-        .heading-1 {
-            color: white;
-            font-size: 20px;
-            margin-top: 50px;
-        }
-        
-        .heading-2 {
-            font-size: 30px;
-            color: #00b7eb;
-        }
-        
-        .heading-3 {
-            font-size: 20px;
-            color: white;
-        }
-        
-        #container-2 {
-            padding: 40px;
-        }
-        
-        .Portfolio {
-            position: relative;
-            width: 280px;
-            height: 340px;
-            margin-left: 30px;
-            margin-top: 60px;
-            object-fit: cover;
-            border: solid 3px #00b7eb;
-            border-radius: 50%;
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .Portfolio:hover {
-            box-shadow: 0 4px 30px #00b7eb;
-            transform: scale(1.05);
-        }
-        
-        #text-type {
-            font-weight: 600;
-            font-size: 30px;
-            color: #00b7eb;
-        }
-        
-        .typing-container {
-            font-size: 30px;
-            font-weight: 600;
-            color: #00b7eb;
-            display: block;
-            text-align: left;
-            /* 👈 Ensures left alignment */
-            word-break: break-word;
-            white-space: normal;
-        }
-        
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1em;
-            background-color: #00b7eb;
-            animation: blink 0.7s steps(1) infinite;
-            margin-left: 2px;
-            vertical-align: baseline;
-            /* 👈 Aligns with text line properly */
-            line-height: 1;
-        }
-        
-        @keyframes blink {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-        }
-        
-        html,
-        body {
-            overflow-x: hidden;
-        }
-        
-        @keyframes blink {
-            95% {
-                opacity: 0;
-            }
-        }
-        
-        .paragraph {
-            color: white;
-        }
-        
-        .btn-color {
-            background-color: black;
-        }
-        
-        .nav-link {
-            font-size: 17px;
-            color: white;
-            margin-left: 40px;
-        }
-        
-        .nav-item a:hover {
-            color: #00b7eb;
-        }
-        
-        .nav-item a:focus {
-            color: #00b7eb;
-        }
-        
-        .color {
-            background-color: #1b1b1b;
-        }
-        
-        body {
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
-        
-        body.loaded {
-            opacity: 1;
-        }
-        
-        .contact {
-            font-size: 2rem;
-            margin-top: 70px;
-            margin-left: 8px;
-            gap: 30px;
-        }
-        
-        a i {
-            display: flex;
-            color: white;
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        a:hover i {
-            color: #00b7eb;
-            transform: scale(1.30);
-        }
-    </style>
-</head>
 
-<body>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        /* Add this */
+        margin: 0;
+        padding-top: 20px;
+        /* Remove padding-top/padding-bottom from here */
+        font-family: sans-serif;
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+    }
+    
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .container {
+        max-width: 1140px;
+    }
+    
+    .card {
+        margin-top: 60px;
+        border: solid 2px white;
+        border-radius: 15px;
+        width: 330;
+        height: 500;
+        padding: 20px;
+        background-color: black;
+    }
+    
+    .card:hover {
+        box-shadow: 0 4px 25px #00b7eb;
+    }
+    
+    .card-title {
+        color: white;
+        width: 50px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-body {
+        background-color: black;
+    }
+    
+    .card-text {
+        color: white;
+    }
+    
+    .btn-color {
+        background-color: black;
+    }
+    
+    .navbar-brand {
+        font-size: 30px;
+        font-weight: bold;
+        top: 20px;
+        margin-left: 20px;
+        color: #00b7eb;
+        text-decoration: none;
+    }
+    
+    .navbar-brand:hover {
+        color: #00b7eb;
+    }
+    
+    .btn-color {
+        background-color: black;
+    }
+    
+    .nav-link {
+        font-size: 17px;
+        margin-left: 40px;
+    }
+    
+    .image-project {
+        width: 200px;
+        height: 300px;
+    }
+    /*.button {
+        padding-top: 40px;
+        left: 20px;
+    }*/
+    
+    .display-6 {
+        font-size: 40px;
+        text-align: center;
+        font-weight: 600;
+        color: #00b7eb;
+    }
+    
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    
+    .image-card:hover {
+        transform: scale(1.06);
+        background-color: rgba(255, 255, 255, 0.12);
+        /* More visible */
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 25px rgba(0, 183, 235, 0.5);
+        transition: all 0.3s ease;
+    }
+    
+    .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    
+    .image-card:hover img {
+        transform: scale(1.06);
+        box-shadow: 0 8px 30px #00b7eb;
+    }
+    
+    .image-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #fff;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: opacity 0.3s ease, background 0.4s ease;
+        text-align: center;
+        pointer-events: auto;
+    }
+    
+    .image-card:hover .image-info {
+        opacity: 1;
+    }
+    
+    .image-info h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #00b7eb;
+    }
+    
+    .image-info p {
+        font-size: 14px;
+    }
+    
+    .image-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        border: 1px solid white;
+        height: 300px;
+        top: 60px;
+        justify-content: center;
+        background: transparent;
+    }
+    
+    .image-card.clicked {
+        background: rgba(255, 255, 255, 0.1);
+        /* Semi-transparent overlay */
+        backdrop-filter: blur(8px);
+        /* Stronger blur */
+        border-color: #00b7eb;
+        /* Highlight border */
+    }
+    
+    .image-card.clicked .image-info {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.6);
+        /* Darker overlay for text readability */
+        backdrop-filter: blur(2px);
+        /* Subtle blur for text area */
+    }
+    
+    .image-card.clicked .image-info p {
+        color: white;
+    }
+    
+    .rounded-4 {
+        width: 120px;
+        height: 40px;
+    }
+    
+    .nav-link {
+        color: white;
+        margin-left: 40px;
+    }
+    
+    .nav-item a:hover {
+        color: #00b7eb;
+    }
+    
+    .nav-item a:focus {
+        color: #00b7eb;
+    }
+    
+    .color {
+        background-color: #1b1b1b;
+    }
+    
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+    main {
+        flex: 1;
+        padding-top: 60px;
+        /* Compensate for fixed navbar */
+        padding-bottom: 300px;
+        /* Add space before footer */
+    }
+    
+    footer {
+        flex-shrink: 0;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+</style>
+
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-md color fixed-top" data-aos="fade-out">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Kiran Pal</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
-            <span class="navbar-toggler-icon" style="color: white;">
+            <span class="navbar-toggler-icon">
         </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav text-center">
@@ -239,106 +266,97 @@
             </div>
         </div>
     </nav>
-    <section class="container custom-max-width" data-aos="zoom-in" data-aos-delay="400">
-        <div class="row">
-            <div class="col-md-5">
-                <div id="container-1 m-2">
-                    <img src="assets/kiran.jpg" class="Portfolio">
-                </div>
+    <main class="flex-fill">
+        <section class="container" data-aos="fade-up" data-aos-delay="400">
+            <div class="row g-10">
+                <div class="display-6" style="color: #00b7eb" ;>Projects</div>
             </div>
-            <div class="col-md-5">
-                <div id="container-2">
-                    <div class="heading-1">Hello, I'am</div>
-                    <div class="heading-2">Kiran Pal</div>
-                    <div class="heading-3">Computer Engineering Student</div>
-                    <div class="typing-container">
-                        <span class="type-line">
-                        <span id="text-type"></span><span class="cursor"></span>
-                        </span>
-                        <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
-                    </div>
-                    <br>
-                    <a href="assets/kiran resume.pdf" download target="_blank" class="btn Download d-flex align-items-center justify-content-center gap-2" style="width:170px;height:55px;">
-                        <i class="bi bi-file-earmark-text resume-download fs-5"></i>
-                        <span>Download CV</span>
-                    </a>
-                    <br>
-                    <div class="contact d-flex">
-                        <a href="https://www.linkedin.com/in/kiran-pal-792960337" target="_blank" style="text-decoration:none;"><i class="bi bi-linkedin linkedin"></i></a>
-                        <a href="https://github.com/Kiranpal489" target="_blank" style="text-decoration:none;"><i class="bi bi-github github"></i></a>
-                        <a href="mailto:kiran.070226@gmail.com" target="_blank" style="text-decoration:none;"><i class="bi bi-envelope-fill mail"></i></a>
+            <div class="portfolio">
+                <div class="image-card">
+                    <img src="assets/protfolio1.jpg" class="Project">
+                    <div class="image-info">
+                        <h3>Portfolio</h3>
+                        <p>A clean, responsive portfolio showcasing my web development skills and projects. Simple, focused design with easy navigation and smooth user experience. Built with precision and purpose.</p>
+                        <div class="d-flex flex-row justify-content-between gap-4">
+                            <a href="https://kiranpal489.github.io/portfolio/"><button type="button" class="btn btn-primary rounded-4">View Porject</button></a>
+                            <a href="https://github.com/Kiranpal489/portfolio"><button type="button" class="btn btn-primary rounded-4">Github</button></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!--<section class="container custom-max-width" data-aos="zoom-in" data-aos-delay="400">
-        <div class="row align-items-center justify-content-center">
-            Left side: Image 
-            <div class="col-lg-5 col-md-6 col-sm-12">
-                <img src="assets/kiran.jpg" class="Portfolio img-fluid">
-            </div>
-
-             Right side: Text + Button + Icons 
-            <div class="col-lg-6 col-md-6 col-sm-12 text-center text-md-start">
-                <div class="heading-1">Hello, I'am</div>
-                <div class="heading-2">Kiran Pal</div>
-                <div class="heading-3">Computer Engineering Student</div>
-                <div class="typing-container">
-                    <span id="text-type"></span><span class="cursor"></span>
-                    <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
+                <div class="image-card">
+                    <img src="assets/personal-expense.jpg" class="Project">
+                    <div class="image-info">
+                        <h3>Personal Expense Tracker</h3>
+                        <p>A clean and responsive web app to manage daily expenses. Users can add, edit, and categorize spending, with visual charts for easy tracking. Built with HTML, CSS, and JavaScript for efficient budgeting.</p>
+                        <div class="d-flex flex-row justify-content-between gap-4">
+                            <a href="https://kiranpal489.github.io/personal-expense-tracker"><button class="btn btn-primary rounded-4">View Project</button></a>
+                            <a href="https://github.com/Kiranpal489/personal-expense-tracker"><button class="btn btn-primary rounded-4">Github</button></a>
+                        </div>
+                    </div>
                 </div>
-                <br><br>
-                <button type="button" class="btn Download mt-2" style="width:170px;height:55px;">
-                <i class="bi bi-file-earmark-text"></i> Download CV
-            </button><br><br><br>
-                <div class="contact d-flex justify-content-center justify-content-md-start mt-4 gap-4">
-                    <a href="https://www.linkedin.com/in/kiran-pal-792960337" target="_blank" style="text-decoration:none;"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/Kiranpal489" target="_blank" style="text-decoration:none;"><i class="bi bi-github"></i></a>
-                    <a href="mailto:kiran.070226@gmail.com" target="_blank" style="text-decoration:none;"><i class="bi bi-envelope-fill"></i></a>
+                <div class="image-card">
+                    <img src="assets/to-do-list.jpg" class="Project">
+                    <div class="image-info">
+                        <h3>To Do List</h3>
+                        <p>A clean and efficient to-do list web application designed for seamless task management. Users can easily add, edit, prioritize, and delete tasks in a simple interface. it offers a smooth and responsive user experience.</p>
+                        <div class="d-flex flex-row justify-content-between gap-4">
+                            <a href="https://kiranpal489.github.io/todolist/"><button type="button" class="btn btn-primary rounded-4">View Porject</button></a>
+                            <a href="https://github.com/Kiranpal489/todolist"><button type="button" class="btn btn-primary rounded-4">Github</button></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>-->
-
+        </section>
+    </main>
+    <footer class="text-white text-center mt-auto">
+        &copy; 2025 Kiran. All rights reserved.
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1000,
             easing: 'ease-in-out',
-            once: true
-        });
-        const text = "Aspiring Full Stack Web Developer";
-        const typingText = document.getElementById("text-type");
-        let index = 0;
-        let isDeleting = false;
-
-        function type() {
-            if (isDeleting) {
-                typingText.textContent = text.substring(0, index--);
-            } else {
-                typingText.textContent = text.substring(0, index++);
-            }
-
-            if (index === text.length + 1) {
-                isDeleting = true;
-                setTimeout(type, 1000);
-            } else if (index < 0) {
-                isDeleting = false;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
-        }
-        type();
-        window.addEventListener("load", () => {
-            document.body.classList.add("loaded");
+            once: true,
         });
 
-        const toggleBtn = document.getElementById("theme-toggle");
-        const themeIcon = document.getElementById("theme-icon");
+        document.querySelectorAll('.image-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // If clicked element is a button, link, or inside image-info, ignore
+                if (e.target.closest('button') || e.target.closest('a') || e.target.closest('.image-info')) {
+                    return; // Let buttons/links handle their own clicks
+                }
+                if (this.classList.contains('clicked')) {
+                    this.classList.remove('clicked');
+                } else {
+                    //rest of the program
+                }
+                // Toggle 'clicked' state only if clicking outside buttons/links
+                document.querySelectorAll('.image-card').forEach(c => {
+                    c.classList.remove('clicked'); // Remove from all cards
+                });
+                this.classList.add('clicked'); // Add to clicked card
+            });
+        });
+        document.querySelectorAll('.image-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Ignore clicks on buttons/links
+                if (e.target.closest('button') || e.target.closest('a')) return;
+
+                // Toggle 'clicked' state
+                const wasClicked = this.classList.contains('clicked');
+
+                // Close all cards first
+                document.querySelectorAll('.image-card').forEach(c => {
+                    c.classList.remove('clicked');
+                });
+
+                // Re-open if this wasn't already clicked
+                if (!wasClicked) this.classList.add('clicked');
+            });
+        });
     </script>
 
 </body>
