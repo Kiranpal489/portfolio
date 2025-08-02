@@ -258,7 +258,7 @@
                         <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
                     </div>
                     <br>
-                    <a href="assets/kiran resume.pdf" class="btn Download d-flex align-items-center justify-content-center gap-2" style="width:170px;height:55px;">
+                    <a href="assets/kiran resume.pdf" class="btn Download d-flex align-items-center justify-content-center gap-2" style="width:170px;height:55px;" id="downloadCV">
                         <i class="bi bi-file-earmark-text resume-download fs-5"></i>
                         <span>Download CV</span>
                     </a>
@@ -272,34 +272,6 @@
             </div>
         </div>
     </section>
-    <!--<section class="container custom-max-width" data-aos="zoom-in" data-aos-delay="400">
-        <div class="row align-items-center justify-content-center">
-            Left side: Image 
-            <div class="col-lg-5 col-md-6 col-sm-12">
-                <img src="assets/kiran.jpg" class="Portfolio img-fluid">
-            </div>
-
-             Right side: Text + Button + Icons 
-            <div class="col-lg-6 col-md-6 col-sm-12 text-center text-md-start">
-                <div class="heading-1">Hello, I'am</div>
-                <div class="heading-2">Kiran Pal</div>
-                <div class="heading-3">Computer Engineering Student</div>
-                <div class="typing-container">
-                    <span id="text-type"></span><span class="cursor"></span>
-                    <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
-                </div>
-                <br><br>
-                <button type="button" class="btn Download mt-2" style="width:170px;height:55px;">
-                <i class="bi bi-file-earmark-text"></i> Download CV
-            </button><br><br><br>
-                <div class="contact d-flex justify-content-center justify-content-md-start mt-4 gap-4">
-                    <a href="https://www.linkedin.com/in/kiran-pal-792960337" target="_blank" style="text-decoration:none;"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/Kiranpal489" target="_blank" style="text-decoration:none;"><i class="bi bi-github"></i></a>
-                    <a href="mailto:kiran.070226@gmail.com" target="_blank" style="text-decoration:none;"><i class="bi bi-envelope-fill"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -339,9 +311,17 @@
 
         const toggleBtn = document.getElementById("theme-toggle");
         const themeIcon = document.getElementById("theme-icon");
+        document.getElementById("downloadCV").addEventListener("click", function(e) {
+            e.preventDefault();
+            const link = document.createElement("a");
+            link.href = "assets/Kiran_Pal_Resume.pdf";
+            link.download = "Kiran_Pal_Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 
 </body>
 
 </html>
-
