@@ -58,11 +58,20 @@
         }
         
         .Download {
+            text-align: center;
             position: absolute;
             background-color: none;
             color: #00b7eb;
             border: 2px solid #00b7eb;
             z-index: 9999;
+        }
+        
+        .resume-download {
+            color: #00b7eb;
+        }
+        
+        .resume-download:focus {
+            color: white;
         }
         
         .Download:hover {
@@ -92,8 +101,8 @@
         
         .Portfolio {
             position: relative;
-            width: 270px;
-            height: 330px;
+            width: 280px;
+            height: 340px;
             margin-left: 30px;
             margin-top: 60px;
             object-fit: cover;
@@ -249,8 +258,11 @@
                         <span style="visibility: hidden; position: absolute;">Aspiring Full Stack Web Developer</span>
                     </div>
                     <br>
-                    <button type="button" class="btn Download" style="width:170px;height:55px;">
-                    <i class="bi bi-file-earmark-text"></i> Download CV</button><br>
+                    <a href="assets/kiran resume.pdf" download target="_blank" class="btn Download d-flex align-items-center justify-content-center gap-2" style="width:170px;height:55px;">
+                        <i class="bi bi-file-earmark-text resume-download fs-5"></i>
+                        <span>Download CV</span>
+                    </a>
+                    <br>
                     <div class="contact d-flex">
                         <a href="https://www.linkedin.com/in/kiran-pal-792960337" target="_blank" style="text-decoration:none;"><i class="bi bi-linkedin linkedin"></i></a>
                         <a href="https://github.com/Kiranpal489" target="_blank" style="text-decoration:none;"><i class="bi bi-github github"></i></a>
@@ -332,4 +344,3 @@
 </body>
 
 </html>
-
